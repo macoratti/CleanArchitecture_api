@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Domain.Entities;
+﻿using CleanArchitecture.Domain.Common;
 using CleanArchitecture.Domain.Interfaces;
 using CleanArchitecture.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +8,7 @@ namespace CleanArchitecture.Persistence.Repositories;
 public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
 {
     protected readonly AppDbContext Context;
+
     public BaseRepository(AppDbContext context)
     {
         Context = context;
